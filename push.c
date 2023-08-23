@@ -2,7 +2,15 @@
 
 void push(stack_t **stack, unsigned int line_number)
 {
-	top++;
-	stack[top]=element;
+	stack_t *new;
+
+    new = malloc(sizeof(stack_t));
+    if (new == NULL)
+    {
+        fprintf(stderr, "L<line_number>: usage: push integer\n");
+        exit(EXIT_FAILURE);
+    }
+    new->n = n; 
+    new->next = *stack;
+    *stack = new;	
 }
-// can we take a 30 mins break?
