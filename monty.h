@@ -36,4 +36,7 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+void push(stack_t **stack, unsigned int line_number);
+int main(int argc, char *argv[]);
+
 #endif _MONTY_
