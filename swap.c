@@ -3,6 +3,7 @@
  * swap - swaps the top two elements of the stack.
  * @s: the line number
  * 
+ * Return: nothing
 */
 
 void swap(struct stack_s)
