@@ -38,5 +38,7 @@ typedef struct instruction_s
 
 void push(stack_t **stack, unsigned int line_number);
 int main(int argc, char *argv[]);
+void error_report(int line_number, char *error_msg);
+void malloc_err(void);
 
 #endif _MONTY_H_
