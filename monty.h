@@ -39,4 +39,4 @@ typedef struct instruction_s
 void push(stack_t **stack, unsigned int line_number);
 int main(int argc, char *argv[]);
 
-#endif _MONTY_
+#endif _MONTY_H_
