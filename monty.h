@@ -1,10 +1,9 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
 
-/* Include header files */
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -40,5 +39,5 @@ void push(stack_t **stack, unsigned int line_number);
 int main(int argc, char *argv[]);
 void error_report(int line_number, char *error_msg);
 void malloc_err(void);
-
+void swap(struct stack_s);
 #endif _MONTY_H_
