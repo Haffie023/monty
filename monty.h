@@ -1,10 +1,16 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
+#define _GNU_SOURCE
 
 /* Include header files */
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <limits.h>
+#include <linux/limits.h> /* Just added it because why not */
+#include <stdbool.h>
+#include <string.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -17,9 +23,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+		int n;
+		struct stack_s *prev;
+		struct stack_s *next;
 } stack_t;
 
 /**
@@ -32,13 +38,20 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+		char *opcode;
+		void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void push(stack_t **stack, unsigned int line_number);
-int main(int argc, char *argv[]);
-void error_report(int line_number, char *error_msg);
-void malloc_err(void);
+/* Define the functions used for instructions*/
+void handle_push(stack_t **stack, unsigned int line_number);
+void handle_pall(stack_t **stack, unsigned int line_number);
 
-#endif _MONTY_H_
+/* Define the functions that are essential */
+char *remove_space(char *str);
+
+/* Define program constants, or something like that*/
+extern char *filename;
+#define MAX_LINE INT_MAX
+#define UNUSED __attribute__((unused))
+
+#endif
