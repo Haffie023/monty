@@ -56,5 +56,6 @@ extern char *value;
 /* Define the functions used for instructions*/
 void handle_push(stack_t **stack, unsigned int line_number);
 void handle_pall(stack_t **stack, UNUSED unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
 
 #endif
