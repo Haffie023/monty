@@ -12,7 +12,7 @@ void handle_push(stack_t **stack, unsigned int line_number)
 	int num;
 
 	if (value == NULL)
-		val_err(line_number, " usage: push integer");
+		val_err(line_number, "usage: push integer");
 
 	num = atoi(value);
 
@@ -40,18 +40,12 @@ void handle_push(stack_t **stack, unsigned int line_number)
  * @line_number: The line number where the instruction is
 */
 
-void handle_pall(stack_t **stack, unsigned int line_number)
+void handle_pall(stack_t **stack, UNUSED unsigned int line_number)
 {
 	stack_t *current = *stack;
 
 	if (isEmpty(stack))
 		return;
-
-	if (stack == NULL)
-	{
-		fprintf(stderr, "problem in line number %d\n", line_number);
-		exit(EXIT_FAILURE);
-	}
 
 	while (current != NULL)
 	{

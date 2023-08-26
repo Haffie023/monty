@@ -42,10 +42,6 @@ typedef struct instruction_s
 		void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/* Define the functions used for instructions*/
-void handle_push(stack_t **stack, unsigned int line_number);
-void handle_pall(stack_t **stack, unsigned int line_number);
-
 /* Define the functions that are essential */
 char *remove_space(char *str);
 bool isEmpty(stack_t **stack);
@@ -56,5 +52,9 @@ extern char *filename;
 extern char *value;
 #define MAX_LINE INT_MAX
 #define UNUSED __attribute__((unused))
+
+/* Define the functions used for instructions*/
+void handle_push(stack_t **stack, unsigned int line_number);
+void handle_pall(stack_t **stack, UNUSED unsigned int line_number);
 
 #endif
