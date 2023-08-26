@@ -48,9 +48,12 @@ void handle_pall(stack_t **stack, unsigned int line_number);
 
 /* Define the functions that are essential */
 char *remove_space(char *str);
+bool isEmpty(stack_t **stack);
+void val_err(int line, char *msg);
 
 /* Define program constants, or something like that*/
 extern char *filename;
+extern char *value;
 #define MAX_LINE INT_MAX
 #define UNUSED __attribute__((unused))
 

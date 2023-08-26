@@ -43,3 +43,29 @@ char *remove_space(char *str)
 	without_space[j] = '\0';
 	return (without_space);
 }
+
+/**
+ * isEmpty - Check if a stack is empty or not
+ * @stack: The stack to be checked
+ * Return: true or false
+*/
+
+bool isEmpty(stack_t **stack)
+{
+	if (stack == NULL)
+		return (true);
+
+	return (false);
+}
+
+/**
+ * val_err - Print function value value error
+ * @line: The line number where the error occurred
+ * @msg: The message to be printed
+*/
+
+void val_err(int line, char *msg)
+{
+	fprintf(stderr, "L%d: %s", line, msg);
+	exit(EXIT_FAILURE);
+}

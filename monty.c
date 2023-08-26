@@ -1,7 +1,7 @@
 #include "monty.h"
 
 static void find_instructions(FILE *file, instruction_t instructions[]);
-
+char *filename, *value;
 /**
  * main - Entry point and function runner
  * @argc: The command line arguments
@@ -13,7 +13,6 @@ static void find_instructions(FILE *file, instruction_t instructions[]);
 
 int main(int argc, char *argv[])
 {
-	char *filename;
 	FILE *file;
 
 	instruction_t instructions[] = {
@@ -54,7 +53,7 @@ int main(int argc, char *argv[])
 
 static void find_instructions(FILE *file, instruction_t instructions[])
 {
-	stack_t **content = NULL;
+	stack_t **content = malloc(sizeof(stack_t));
 	ssize_t line_c = 0;
 	size_t len = 0;
 	char *line = NULL, *_op;
@@ -71,9 +70,8 @@ static void find_instructions(FILE *file, instruction_t instructions[])
 			continue;
 		}
 		_op = strtok(clean_line, " \n\t\r");
-
 		j = 0;
-
+		value = strtok(NULL, " \n\t\r");
 		while (instructions[j].opcode != NULL)
 		{
 			if (strcmp(instructions[j].opcode, _op) == 0)
