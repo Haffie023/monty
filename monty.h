@@ -39,5 +39,5 @@ void push(stack_t **stack, unsigned int line_number);
 int main(int argc, char *argv[]);
 void error_report(int line_number, char *error_msg);
 void malloc_err(void);
-void swap(struct stack_s);
+void swap(stack_t ** stack, unsigned int line_number);
 #endif _MONTY_H_
